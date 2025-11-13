@@ -24,22 +24,22 @@ export function main() {
 
         switch (opcao) {
             case 1:
-                console.log("Cadastrando produto...");
+                console.log("Cadastrar produto");
                 // Lógica para cadastrar produto
                 keyPress();
                 break;
             case 2:
-                console.log("Listando produtos...");
+                console.log("Listan produtos");
                 // Lógica para listar produtos
                 keyPress();
                 break;
             case 3:
-                console.log("Alterando produto...");
+                console.log("Alteran produto");
                 // Lógica para alterar produto
                 keyPress();
                 break;
             case 4:
-                console.log("Excluindo produto...");
+                console.log("Excluin produto");
                 // Lógica para excluir produto
                 keyPress();
                 break;
