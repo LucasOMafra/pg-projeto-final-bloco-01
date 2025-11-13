@@ -29,17 +29,17 @@ export function main() {
                 keyPress();
                 break;
             case 2:
-                console.log("Listando produtos...");
+                console.log("Listar produtos");
                 // Lógica para listar produtos
                 keyPress();
                 break;
             case 3:
-                console.log("Alterando produto...");
+                console.log("Alterar produto");
                 // Lógica para alterar produto
                 keyPress();
                 break;
             case 4:
-                console.log("Excluindo produto...");
+                console.log("Excluin produto");
                 // Lógica para excluir produto
                 keyPress();
                 break;
