@@ -1,68 +1,54 @@
-import readlinesync = require("readline-sync");
+import * as readlineSync from "readline-sync";
 
-export function main() {
+const cor = {
+  reset: "\x1b[0m",
+  lilas: "\x1b[35m",
+};
 
-    let opcao: number;
+export function exibirMenu(): void {
+  console.clear();
+  console.log(cor.lilas);
+  console.log("======================================================");
+  console.log("                 🛍️  E-COMMERCE SYSTEM                ");
+  console.log("======================================================");
+  console.log(" [1] ➜ Cadastrar Produto");
+  console.log(" [2] ➜ Listar Produtos");
+  console.log(" [3] ➜ Alterar Produto");
+  console.log(" [4] ➜ Excluir Produto");
+  console.log(" [5] ➜ Sair");
+  console.log("======================================================");
+  console.log(cor.reset);
+}
 
-    while (true) {
-        console.log("-------------------- E-COMMERCE  --------------------");
-        console.log("            1 - Cadastrar produto                    ");
-        console.log("            2 - Listar Produtos                      ");
-        console.log("            3 - Alterar Produto                      ");
-        console.log("            4 - Excluir Produto                      ");
-        console.log("            5 - Sair                                 ");
-        console.log("-----------------------------------------------------");
+function main() {
+  while (true) {
+    exibirMenu();
+    
+    // 💜 Entrada também em lilás
+    const opcao = readlineSync.questionInt(`${cor.lilas}Escolha uma opção: ${cor.reset}`);
 
-        console.log("Entre com a opção desejada: ");
-        opcao = readlinesync.questionInt("");
-
-        if (opcao === 5) {
-            console.log("Saindo do sistema...");
-            sobre();
-            process.exit(0);
-        }
-
-        switch (opcao) {
-            case 1:
-                console.log("Cadastrar produtos");
-                // Lógica para cadastrar produto
-                keyPress();
-                break;
-            case 2:
-                console.log("Listar produtos");
-                // Lógica para listar produtos
-                keyPress();
-                break;
-            case 3:
-                console.log("Alterar produtos");
-                // Lógica para alterar produto
-                keyPress();
-                break;
-            case 4:
-                console.log("Excluir produtos");
-                // Lógica para excluir produto
-                keyPress();
-                break;
-            default:
-                console.log("Opção inválida! Tente novamente.");
-                keyPress();
-                break;
-        }
+    switch (opcao) {
+      case 1:
+        console.log(cor.lilas, "\n📝 Cadastrar Produto selecionado!", cor.reset);
+        break;
+      case 2:
+        console.log(cor.lilas, "\n📋 Listando Produtos...", cor.reset);
+        break;
+      case 3:
+        console.log(cor.lilas, "\n✏️ Alterar Produto selecionado!", cor.reset);
+        break;
+      case 4:
+        console.log(cor.lilas, "\n🗑️ Excluir Produto selecionado!", cor.reset);
+        break;
+      case 5:
+        console.log(cor.lilas, "\n👋 Saindo do sistema... Até logo!", cor.reset);
+        process.exit(0);
+      default:
+        console.log(cor.lilas, "\n❌ Opção inválida! Tente novamente.", cor.reset);
     }
 
-}
-
-export function sobre(): void {
-    console.log("\n*****************************************************");
-    console.log("Projeto Desenvolvido por: Lucas Mafra");
-    console.log("E-mail: lucasmafra.med@gmail.com");
-    console.log("Github: github.com/LucasOMafra");
-    console.log("*******************************************************");
-}
-
-function keyPress(): void {
-    console.log("\nPressione enter para continuar...");
-    readlinesync.prompt();
+    readlineSync.question(cor.lilas + "\nPressione ENTER para voltar ao menu..." + cor.reset);
+  }
 }
 
 main();
