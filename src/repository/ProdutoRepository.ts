@@ -1,5 +1,3 @@
-// src/repository/ProdutoRepository.ts
-
 import { Produto } from "../model/Produto";
 
 // Interface que define as operações básicas para manipular produtos
@@ -11,8 +9,8 @@ export interface ProdutoRepository {
     // Lista todos os produtos cadastrados
     listarTodos(): void;
 
-    // Busca e exibe um produto pelo ID
-    procurarPorId(id: number): void;
+    // Busca e retorna um produto pelo ID
+    procurarPorId(id: number): Produto | undefined;
 
     // Atualiza as informações de um produto existente
     atualizar(produto: Produto): void;
@@ -20,3 +18,4 @@ export interface ProdutoRepository {
     // Remove um produto da lista pelo ID
     deletar(id: number): void;
 }
+
