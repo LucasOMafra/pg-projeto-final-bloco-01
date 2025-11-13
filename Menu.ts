@@ -55,8 +55,8 @@ export function main() {
 export function sobre(): void {
     console.log("\n*****************************************************");
     console.log("                Projeto Desenvolvido por:              ");
-    console.log("  Daniel Almeida Andrade - dan.andrade313@gmail.com    ");
-    console.log("                   github.com/Dan2a                    ");
+    console.log("  Lucas Mafra - lucasmafra.med@gmail.com    ");
+    console.log("                   github.com/LucasOMafra                   ");
     console.log("*******************************************************");
 }
 
